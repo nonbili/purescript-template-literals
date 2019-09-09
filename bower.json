@@ -1,0 +1,29 @@
+{
+  "name": "purescript-template-literals",
+  "description": "ES2015 template literals in PureScript",
+  "keywords": [
+    "purescript",
+    "template",
+    "literals"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/nonbili/purescript-template-literals.git"
+  },
+  "license": "BSD-3-Clause",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "output",
+    "docs"
+  ],
+  "dependencies": {
+    "purescript-argonaut-codecs": "^6.0.2",
+    "purescript-effect": "^2.0.1"
+  },
+  "devDependencies": {
+    "purescript-jest": "^0.3.0",
+    "purescript-psci-support": "^4.0.0"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "postinstall": "spago build",
+    "start": "parcel index.html"
+  },
+  "devDependencies": {
+    "jest": "^24.9.0"
+  }
+}
