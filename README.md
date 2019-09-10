@@ -8,11 +8,14 @@ In `spago repl`
 
 ```
 > import Data.TemplateLiteral
-> template "Hello, ${t}!" { t: "world" }
+> template "Hello, ${t}!" { t: Just "world" }
 "Hello, world!"
 
 > template "${obj.id} - ${obj.name}" { obj : { id: 1, name: "obj" } }
 "1 - obj"
+
+> template' "${text} - ${tr(text)}!" { text: "hello", tr: String.toUpper }
+"hello - HELLO"
 ```
 
 ## Development
