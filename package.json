@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "postinstall": "spago build",
+    "postinstall": "spago install",
     "start": "parcel index.html"
   },
   "devDependencies": {

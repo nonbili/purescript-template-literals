@@ -20,7 +20,7 @@ foreign import template_ :: String -> Foreign -> Effect String
 -- | > template "Hello, ${t}!" { t: Just "world" }
 -- | "Hello, world!"
 -- | ```
-template :: forall a. EncodeJson a => String -> a -> Effect String
+template :: forall a. EncodeJson (Record a) => String -> { | a } -> Effect String
 template tpl params = template_ tpl (unsafeToForeign $ encodeJson params)
 
 -- | The first argument is treated as template literals. The second argument
@@ -33,5 +33,5 @@ template tpl params = template_ tpl (unsafeToForeign $ encodeJson params)
 -- | > template' "${text} - ${tr(text)}!" { text: "hello", tr: String.toUpper }
 -- | "hello - HELLO"
 -- | ```
-template' :: forall a. String -> a -> Effect String
+template' :: forall a. String -> { | a } -> Effect String
 template' tpl params = template_ tpl (unsafeToForeign params)

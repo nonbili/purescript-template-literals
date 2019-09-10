@@ -10,8 +10,8 @@ import Data.Argonaut.Encode (class EncodeJson)
 import Data.TemplateLiteral as L
 import Effect.Unsafe (unsafePerformEffect)
 
-template :: forall a. EncodeJson a => String -> a -> String
+template :: forall a. EncodeJson (Record a) => String -> { | a } -> String
 template t p = unsafePerformEffect $ L.template t p
 
-template' :: forall a. String -> a -> String
+template' :: forall a. String -> { | a } -> String
 template' t p = unsafePerformEffect $ L.template' t p
